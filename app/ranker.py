@@ -1,6 +1,6 @@
 # utils/ranker.py
 from sentence_transformers import SentenceTransformer, util
-from .pdf_parser import extract_text_from_pdf
+from .utils import extract_text_from_pdf
 
 model = SentenceTransformer('all-MiniLM-L6-v2')  # You can load this once globally
 
