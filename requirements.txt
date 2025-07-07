@@ -8,6 +8,5 @@ scikit-learn
 requests
 sentence-transformers
 gunicorn
-flask
 transformers
 torch
