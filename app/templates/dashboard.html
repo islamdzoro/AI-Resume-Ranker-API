@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Welcome, {{ user.username }}!</h2>
+<p>This is your protected dashboard.</p>
+<h5>Your API Key</h5>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="apiKey" value="{{ user.api_key }}" readonly>
+  <button class="btn btn-outline-secondary" type="button" onclick="copyApiKey()">Copy</button>
+</div>
+
+<form method="POST" action="{{ url_for('auth.regenerate_api_key') }}">
+  <button class="btn btn-warning">Regenerate API Key</button>
+</form>
+<div>
+    <p><a href="{{ url_for('auth.docs') }}">📘 View API Documentation</a></p>
+
+</div>
+<!-- <p><a href="{{ url_for('auth.docs') }}">📘 View API Documentation</a></p> -->
+
+<a href="{{ url_for('auth.logout') }}" class="btn btn-danger">Logout</a>
+
+<script>
+function copyApiKey() {
+  const input = document.getElementById("apiKey");
+  input.select();
+  input.setSelectionRange(0, 99999); // For mobile
+  document.execCommand("copy");
+  alert("API key copied to clipboard!");
+}
+</script>
+
+{% endblock %}
+

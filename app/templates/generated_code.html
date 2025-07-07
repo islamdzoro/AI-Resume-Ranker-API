@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Generated Code{% endblock %}
+{% block content %}
+<h2>Generated Flask Code</h2>
+<pre><code>{{ flask_code }}</code></pre>
+
+{% if html_code %}
+<h2>Generated HTML Form</h2>
+<pre><code>{{ html_code }}</code></pre>
+{% endif %}
+
+<a href="{{ url_for('auth.generate_api') }}" class="btn btn-secondary mt-3">Generate Another</a>
+{% endblock %}

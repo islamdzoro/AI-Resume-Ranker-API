@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block title %}API Documentation{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">📘 Resume Ranker API Documentation</h2>
+
+<h4>🔗 Endpoint</h4>
+<pre><code class="copyable">POST https://yourdomain.com/api/rank-resumes</code></pre>
+
+<h4>🔐 Authentication</h4>
+<p>Include your API key in the <code>Authorization</code> header:</p>
+<pre><code class="copyable">Authorization: Bearer amn=your_api_key_here</code></pre>
+
+<h4>📤 Request Parameters</h4>
+<ul>
+  <li><strong>resumes</strong> (file[], required): One or more PDF resumes</li>
+  <li><strong>job_description</strong> (text, required): The job description to match against</li>
+</ul>
+
+<h4>📥 Example Request (curl)</h4>
+<pre><code class="copyable">curl -X POST https://yourdomain.com/api/rank-resumes \
+  -H "Authorization: Bearer amn=your_api_key_here" \
+  -F "resumes=@cv1.pdf" \
+  -F "resumes=@cv2.pdf" \
+  -F "job_description=We are hiring a backend engineer..."</code></pre>
+
+<h4>📥 Example Request (Python)</h4>
+<pre><code class="copyable">import requests
+
+headers = {
+    "Authorization": "Bearer amn=your_api_key_here"
+}
+files = [
+    ('resumes', ('cv1.pdf', open('cv1.pdf', 'rb'), 'application/pdf')),
+    ('resumes', ('cv2.pdf', open('cv2.pdf', 'rb'), 'application/pdf')),
+]
+data = {
+    "job_description": "We are hiring a backend engineer..."
+}
+
+response = requests.post("https://yourdomain.com/api/rank-resumes", headers=headers, files=files, data=data)
+print(response.json())</code></pre>
+
+<h4>📦 Sample Response</h4>
+<pre><code class="copyable">{
+  "results": [
+    {
+      "filename": "cv2.pdf",
+      "score": 0.8745
+    },
+    {
+      "filename": "cv1.pdf",
+      "score": 0.6721
+    }
+  ],
+  "count": 2,
+  "requested_by": "user@example.com"
+}</code></pre>
+
+<hr class="my-5">
+
+<h4>🧪 Try It Now</h4>
+<form method="POST" action="{{ url_for('auth.try_api') }}" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="api_key" class="form-label">API Key</label>
+    <input type="text" class="form-control" id="api_key" name="api_key" placeholder="amn=your_api_key_here" required>
+  </div>
+  <div class="mb-3">
+    <label for="resumes" class="form-label">Upload Resumes (PDF)</label>
+    <input type="file" class="form-control" id="resumes" name="resumes" multiple required>
+  </div>
+  <div class="mb-3">
+    <label for="job_description" class="form-label">Job Description</label>
+    <textarea class="form-control" id="job_description" name="job_description" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Submit Test Request</button>
+</form>
+
+{% if response is iterable and response[0] is mapping %}
+<hr class="my-5">
+<h5>📬 API Response</h5>
+<table class="table table-striped">
+  <thead>
+    <tr><th>Filename</th><th>Score</th></tr>
+  </thead>
+  <tbody>
+    {% for item in response %}
+    <tr>
+      <td>{{ item.filename }}</td>
+      <td>{{ item.score }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% elif response %}
+<hr class="my-5">
+<h5>📬 API Response</h5>
+<pre><code>{{ response }}</code></pre>
+{% endif %}
+
+<p class="mt-4"><a href="{{ url_for('auth.dashboard') }}" class="btn btn-secondary">← Back to Dashboard</a></p>
+
+<!-- ✅ Copy Button Script -->
+<script>
+document.querySelectorAll('code.copyable').forEach(block => {
+  const button = document.createElement('button');
+  button.innerText = 'Copy';
+  button.className = 'btn btn-sm btn-outline-primary mb-2 float-end';
+  button.addEventListener('click', () => {
+    const text = block.innerText;
+    navigator.clipboard.writeText(text);
+    button.innerText = 'Copied!';
+    setTimeout(() => button.innerText = 'Copy', 1500);
+  });
+  block.parentElement.insertBefore(button, block);
+});
+</script>
+{% endblock %}
