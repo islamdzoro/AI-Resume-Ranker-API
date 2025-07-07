@@ -10,6 +10,16 @@ from .ranker import rank_resumes_by_semantic_similarity
 
 auth = Blueprint('auth', __name__)
 
+@auth.route('/')
+def home():
+    return jsonify({"message": "Flask API is live on Hugging Face!"})
+
+@auth.route('/embed', methods=['POST'])
+def embed():
+    data = request.json
+    text = data.get("text", "")
+    return jsonify({"embedding": [0.1, 0.2, 0.3]})  # Dummy
+
 @auth.route('/rank-resumes', methods=['POST'])
 def rank_resumes():
     auth_header = request.headers.get('Authorization')
