@@ -2,7 +2,8 @@
 from sentence_transformers import SentenceTransformer, util
 from .utils import extract_text_from_pdf
 
-model = SentenceTransformer('all-MiniLM-L6-v2')  # You can load this once globally
+model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
+  # You can load this once globally
 
 def rank_resumes_by_semantic_similarity(resume_files, job_description):
     resume_texts = [extract_text_from_pdf(f) for f in resume_files]
